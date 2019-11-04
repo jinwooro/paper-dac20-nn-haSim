@@ -1,0 +1,154 @@
+{
+  "originalFile": "resources/cosine.mdl",
+  "systemName": "cosine",
+  "HIOAs": [
+    {
+      "name": "Steeringwheel",
+      "locations": [
+        {
+          "name": "LeftTurn",
+          "id": 3,
+          "invariants": [],
+          "ODEs": [
+            {
+              "RHS": "1",
+              "relation": "=",
+              "LHS": "r_dot"
+            }
+          ],
+          "outputUpdates": [
+            {
+              "RHS": "cos(r)",
+              "relation": "=",
+              "LHS": "x_out"
+            },
+            {
+              "RHS": "r",
+              "relation": "=",
+              "LHS": "r_out"
+            }
+          ],
+          "entries": []
+        },
+        {
+          "name": "RightTurn",
+          "id": 4,
+          "invariants": [],
+          "ODEs": [
+            {
+              "RHS": "-3*pi*k",
+              "relation": "=",
+              "LHS": "r_dot"
+            }
+          ],
+          "outputUpdates": [
+            {
+              "RHS": "r",
+              "relation": "=",
+              "LHS": "r_out"
+            },
+            {
+              "RHS": "cos(r)",
+              "relation": "=",
+              "LHS": "x_out"
+            }
+          ],
+          "entries": []
+        }
+      ],
+      "transitions": [
+        {
+          "src": "RightTurn",
+          "dst": "LeftTurn",
+          "guards": [
+            {
+              "RHS": "0.99",
+              "relation": ">=",
+              "LHS": "cos(r)"
+            }
+          ],
+          "resets": []
+        },
+        {
+          "src": "LeftTurn",
+          "dst": "RightTurn",
+          "guards": [
+            {
+              "RHS": "-0.99",
+              "relation": "<=",
+              "LHS": "cos(r)"
+            }
+          ],
+          "resets": []
+        }
+      ],
+      "I": [],
+      "O": [
+        {
+          "name": "x_out",
+          "initialValue": 0.0
+        },
+        {
+          "name": "r_out",
+          "initialValue": 0.0
+        }
+      ],
+      "X_C": [
+        {
+          "name": "r",
+          "initialValue": 0.0
+        }
+      ],
+      "X_D": [
+        {
+          "name": "k",
+          "initialValue": 0.0
+        }
+      ],
+      "X_DOT": [
+        {
+          "name": "r_dot",
+          "initialValue": 0.0
+        }
+      ],
+      "initialLocation": {
+        "name": "LeftTurn",
+        "id": 3,
+        "invariants": [],
+        "ODEs": [
+          {
+            "RHS": "1",
+            "relation": "=",
+            "LHS": "r_dot"
+          }
+        ],
+        "outputUpdates": [
+          {
+            "RHS": "cos(r)",
+            "relation": "=",
+            "LHS": "x_out"
+          },
+          {
+            "RHS": "r",
+            "relation": "=",
+            "LHS": "r_out"
+          }
+        ],
+        "entries": []
+      },
+      "initialization": [
+        {
+          "RHS": "1",
+          "relation": "=",
+          "LHS": "k"
+        },
+        {
+          "RHS": "0",
+          "relation": "=",
+          "LHS": "r"
+        }
+      ]
+    }
+  ],
+  "Lines": []
+}

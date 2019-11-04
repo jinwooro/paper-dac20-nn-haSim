@@ -1,0 +1,13 @@
+\section{Introduction}
+Many \acp{CPS} are inherently safety-critical as they operate closely with human. Typical examples include implantable medical devices, and autonomous vehicle systems. 
+
+Key points:
+\begin{enumerate}
+	\item For validation, systems are tested through real experiments. E.g., pacemakers are tested using real heart, and vehicular systems are tested using real cars.
+	\item However, preparing real experiment is extremely expensive, and limited by ethics and legislation. E.g., we cannot get real hearts easily. 
+	\item Thus, a device which can mimic the plant (i.e., heart/vehicle part) is desired. This poses the need for executing the model on hardware. 
+	\item Traditionally, \acp{CPS} are modelled using \ac{HA}. Ensuring zero-crossing detection is fundamental for correct operation.
+	\item Zero-crossing detection algorithm is based on root-finding methods, which are computationally heavy to be deployed on hardware.
+	\item Thus, this paper proposes to replace the zero-crossing detection algorithm with neural networks.
+\end{enumerate}
+
