@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.83"
+    ComputedModelVersion    "1.85"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -44,7 +44,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [4179.0, 23.0, 941.0, 1177.0]
+      Location		      [80.0, 23.0, 941.0, 777.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -66,11 +66,11 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[903.0, 1001.0]
-	ZoomFactor		[1.25]
-	Offset			[-357.5046875, -154.70000000000005]
+	ViewObjType		"StateflowChart"
+	LoadSaveID		"5"
+	Extents			[903.0, 601.0]
+	ZoomFactor		[1.5]
+	Offset			[86.86099999999999, -14.839000000000027]
       }
       Array {
 	Type			"Simulink.DockComponentInfo"
@@ -104,10 +104,10 @@ Model {
       WindowState	      "AAAA/wAAAAD9AAAAAwAAAAAAAADcAAAEJPwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD8AAAARgAABCQAAAAAAP////r/////AgAAAAH7AAAAUgBHA"
       "EwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAA"
-      "P////8AAABqAP///wAAAAEAAANUAAAEJPwCAAAAAfwAAABGAAAEJAAAAAAA////+v////8CAAAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZ"
+      "P////8AAABrAP///wAAAAEAAANUAAAEJPwCAAAAAfwAAABGAAAEJAAAAAAA////+v////8CAAAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZ"
       "QByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZQBjAHQAbwByAAAAAAD/////AAAAOQD///8AAAADA"
       "AAHgAAAAOr8AQAAAAH8AAAAAAAAB4AAAAAAAP////r/////AQAAAAH7AAAANgBHAEwAVQBFADIAOgBTAHAAcgBlAGEAZABTAGgAZQBlAHQALwBNA"
-      "G8AZABlAGwARABhAHQAYQAAAAAA/////wAAAaAA////AAADrQAABCQAAAABAAAAAgAAAAEAAAAC/AAAAAEAAAACAAAAD/////8AAAAAAP////8AA"
+      "G8AZABlAGwARABhAHQAYQAAAAAA/////wAAAaAA////AAADrQAAApQAAAABAAAAAgAAAAEAAAAC/AAAAAEAAAACAAAAD/////8AAAAAAP////8AA"
       "AAAAAAAAP////8BAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AA"
       "AAAAAAAAP////8BAAAAhP////8AAAAAAAAAAP////8BAAAA9v////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8BAAABev////8AA"
       "AAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8BAAADT/////8AA"
@@ -121,9 +121,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "jinwooro"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Nov 04 14:07:27 2019"
-  RTWModifiedTimeStamp	  494774992
-  ModelVersionFormat	  "1.%<AutoIncrement:83>"
+  LastModifiedDate	  "Tue Nov 05 14:42:55 2019"
+  RTWModifiedTimeStamp	  494865526
+  ModelVersionFormat	  "1.%<AutoIncrement:85>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  on
   LibraryLinkDisplay	  "disabled"
@@ -181,7 +181,7 @@ Model {
     $ObjectID		    8
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "cosine"
-    overrideMode_	    [0U]
+    overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
@@ -943,7 +943,7 @@ Model {
 	  StopTime		  "10"
 	  AbsTol		  "auto"
 	  AutoScaleAbsTol	  on
-	  FixedStep		  "auto"
+	  FixedStep		  "0.1"
 	  InitialStep		  "auto"
 	  MaxOrder		  5
 	  ZcThreshold		  "auto"
@@ -957,8 +957,8 @@ Model {
 	  RelTol		  "1e-6"
 	  EnableMultiTasking	  off
 	  ConcurrentTasks	  off
-	  Solver		  "ode3"
-	  SolverName		  "ode3"
+	  Solver		  "FixedStepAuto"
+	  SolverName		  "FixedStepAuto"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -1626,8 +1626,8 @@ Model {
       }
       Name		      "QuickStart_50019_11_4_11_19_51104963"
       ExtraOptions	      "-aBlockCommentType=\"BlockPathComment\" -aIgnoreTestpoints=0 "
-      CurrentDlgPage	      "Code Generation/Interface"
-      ConfigPrmDlgPosition    [ 3611, 251, 4601, 911 ]
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    [ 86, 70, 1076, 730 ]
     }
     PropName		    "ConfigurationSets"
   }
@@ -1684,7 +1684,7 @@ Model {
       $PropName		      "OutputFunctionMappings"
       $ObjectID		      39
       $ClassName	      "Simulink.CoderDictionary.PeriodicFunctionMapping"
-      Period		      [0.2]
+      Period		      [0.1]
       Offset		      [0.0]
       Prototype		      ""
       SimulinkFunctionName    "Step"
@@ -1976,8 +1976,8 @@ Model {
   }
   System {
     Name		    "cosine"
-    Location		    [4179, 23, 5120, 1200]
-    Open		    on
+    Location		    [80, 23, 1021, 800]
+    Open		    off
     PortBlocksUseCompactNotation off
     SetExecutionDomain	    off
     ExecutionDomainType	    "Deduce"
@@ -2017,7 +2017,7 @@ Model {
       "705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.8313"
       "72549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configura"
       "tion('Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Versio"
-      "n','2018b')),'Version','2018b','Position',[3772 -225 949 683])"
+      "n','2018b')),'Version','2018b','Position',[37 22 949 683])"
       NumInputPorts	      "1"
       Floating		      off
     }
@@ -2036,8 +2036,8 @@ Model {
       ContentPreviewEnabled   on
       System {
 	Name			"Steeringwheel"
-	Location		[4112, 23, 5120, 1200]
-	Open			off
+	Location		[80, 23, 1021, 800]
+	Open			on
 	PortBlocksUseCompactNotation off
 	SetExecutionDomain	off
 	ExecutionDomainType	"Deduce"
@@ -2184,8 +2184,8 @@ Stateflow {
     machine		    1
     name		    "Steeringwheel"
     windowPosition	    [4112 23 1008 1177]
-    viewLimits		    [201.861 589.861 17.561 417.961]
-    zoomFactor		    0.4
+    viewLimits		    [86.861 688.861 -14.839 385.828]
+    zoomFactor		    0.667
     screen		    [1 1 3200 1200 1.25]
     treeNode		    [0 3 0 0]
     viewObj		    2
@@ -2208,7 +2208,7 @@ Stateflow {
   }
   state {
     id			    3
-    labelString		    "LeftTurn\ndu:\nr_dot = 1;\nr_out = r;\nx_out = cos(r);\n"
+    labelString		    "A\ndu:\nr_dot = 1;\nr_out = r;\nx_out = cos(r);\n"
     position		    [238 154 90 81]
     fontSize		    12
     chart		    2
@@ -2222,7 +2222,7 @@ Stateflow {
   }
   state {
     id			    4
-    labelString		    "RightTurn\ndu:\nr_dot = -3*pi*k;\nr_out = r;\nx_out = cos(r);"
+    labelString		    "B\ndu:\nr_dot = -3*pi*k;\nr_out = r;\nx_out = cos(r);"
     position		    [469 154 89 80]
     fontSize		    12
     chart		    2
@@ -2387,7 +2387,7 @@ Stateflow {
   transition {
     id			    11
     labelString		    "[cos(r) >= 0.99]"
-    labelPosition	    [348.859 219.5 83.281 14]
+    labelPosition	    [354.859 218.833 83.281 14]
     fontSize		    12
     src {
       id		      4
