@@ -1,3 +1,4 @@
 Latex/main.*
 !main.tex
 *.o
+*.csv

@@ -51,7 +51,7 @@ void cosine_step()
     {
       calc_r();
       calc_x_out();
-      
+
       // compute the next time step size
       // this should depend on the guard condition
       // if we can solve the guard condition, we know where to trigger the
@@ -90,14 +90,14 @@ void cosine_step()
 int main(int argc, const char *argv[])
 {
   static double time = 0;
-  int max_time = 10;
+  int max_time = 1000;
 
-  printf(" Time, r, x_out\r\n");
+  printf("Time,r,x_out\r\n");
   cosine_initialize();
 
   while(time <= max_time )
   {
-    printf("%f, %f, %f\r\n", time, cosine.r, cosine.x_out );
+    printf("%f,%f,%f\r\n", time, cosine.r, cosine.x_out );
     cosine_step();
     time = time + STEP;
   }

@@ -12,7 +12,7 @@ all:	$(TARGET)
 
 
 $(TARGET):	$(OBJS)
-	$(CXX) -o $(TARGET) $(OBJS)
+	$(CXX) -o $(TARGET) $(OBJS) -lm
 
 debug:
 	$(CXX) -D_DEBUG -o $(TARGET) $(SRCS)
